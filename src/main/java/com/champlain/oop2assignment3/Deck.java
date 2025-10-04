@@ -39,6 +39,7 @@ public class Deck extends CardCollection implements CardSource {
      * Method to return the single instance of Deck. If an instance of Deck does not exist
      * it is created. Otherwise, return the already existing Deck.
      * @return singleton instance of Deck
+     * @implNote This method is not thread-safe. It's designed for use in single-threaded applications.
      */
     public static Deck getInstance() {
         if (aDeck == null) {
