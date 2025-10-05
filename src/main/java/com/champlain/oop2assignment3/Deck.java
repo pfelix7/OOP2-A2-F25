@@ -19,15 +19,34 @@ public class Deck extends CardCollection implements CardSource {
     private final List<Card> aCards = new ArrayList<>();
 
     /**
+     * singleton instance of Deck
+     */
+    private static Deck aDeck = null;
+
+    /**
      * Constructs a new Deck containing all standard playing cards.
      * The deck is initialized with one of each rank and suit combination.
+     * Constructor set to private for Singleton implementation.
      */
-    public Deck() {
+    private Deck() {
         for (Rank currentRank : Rank.values()) {
             for (Suit currentSuit : Suit.values()) {
                 this.aCards.add(new Card(currentRank, currentSuit));
             }
         }
+    }
+
+    /**
+     * Method to return the single instance of Deck. If an instance of Deck does not exist
+     * it is created. Otherwise, return the already existing Deck.
+     * @return singleton instance of Deck
+     * @implNote This method is not thread-safe. It's designed for use in single-threaded applications.
+     */
+    public static Deck getInstance() {
+        if (aDeck == null) {
+            aDeck = new Deck();
+        }
+        return aDeck;
     }
 
     /**
