@@ -26,6 +26,7 @@ public class Deck extends CardCollection implements CardSource {
     /**
      * Constructs a new Deck containing all standard playing cards.
      * The deck is initialized with one of each rank and suit combination.
+     * Constructor set to private for Singleton implementation.
      */
     private Deck() {
         for (Rank currentRank : Rank.values()) {
