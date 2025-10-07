@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Launches the test application when executed.
@@ -26,6 +27,9 @@ public class DeckApplication extends Application {
         pStage.show();
     }
 
+
+    Hand hand = new Hand();
+    hand.add(new Card)
     /**
      * Main method executed on launch.
      * @param pArgs Additional program arguments. Not used.
