@@ -6,6 +6,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
+
 /**
  * Controller class for managing the deck and hand of cards in the user interface.
  * <p>
@@ -15,6 +16,8 @@ import javafx.scene.control.TextArea;
  * </p>
  */
 public class DeckController {
+
+
     /**
      * TextArea for displaying the current state of the deck.
      */
@@ -104,6 +107,7 @@ public class DeckController {
         }
     }
 
+
     /**
      * Handles the event when the score button is clicked.
      * Calculates the score based on the selected scoring strategy.
@@ -118,8 +122,12 @@ public class DeckController {
         } else {
             switch (choice) {
                 case "Simple Count":
-                    // TODO: Replace the following line of code.
-                    this.aScoreLabel.setText("Simple count...");
+
+                    SimpleCountStrategy strategy = new SimpleCountStrategy();
+                    int score = strategy.calculateScore(aHand);
+
+
+                    this.aScoreLabel.setText("Simple count " + score);
                     break;
                 case "Number Of Aces":
                     // TODO: Replace the following line of code.
