@@ -105,7 +105,6 @@ public class DeckController {
                     this.aDeck.sort(new RankFirstComparator());
                     break;
                 case "Suit First":
-                    // TODO: Replace the following line of code.
                     this.aDeck.sort(new SuitFirstComparator());
                     break;
                 default:
