@@ -28,8 +28,7 @@ public class DeckApplication extends Application {
     }
 
 
-    Hand hand = new Hand();
-    hand.add(new Card)
+
     /**
      * Main method executed on launch.
      * @param pArgs Additional program arguments. Not used.
