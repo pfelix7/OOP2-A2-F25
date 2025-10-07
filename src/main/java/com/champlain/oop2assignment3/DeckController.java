@@ -77,8 +77,18 @@ public class DeckController {
 
     /**
      * Handles the event when the sort button is clicked.
-     * Sorts the deck based on the selected sorting strategy.
-     * Displays an error alert if no strategy is selected.
+     * Sorts the deck based on the selected sorting strategy from the choice box.
+     * 
+     * <p>The method performs the following actions:</p>
+     * <ul>
+     *   <li>Retrieves the selected sorting strategy from the choice box</li>
+     *   <li>If no strategy is selected, displays an error alert to the user</li>
+     *   <li>For "Rank First" strategy, sorts the deck using RankFirstComparator which prioritizes card ranks</li>
+     *   <li>For "Suit First" strategy, sorts the deck using SuitFirstComparator which prioritizes card suits</li>
+     *   <li>Updates the display to show the sorted deck</li>
+     * </ul>
+     * 
+     * @throws Alert displays an error alert if no sorting strategy is selected
      */
     @FXML
     protected void onSortButtonClick() {
@@ -89,11 +99,9 @@ public class DeckController {
         } else {
             switch (choice) {
                 case "Rank First":
-                    // TODO: Replace the following line of code.
                     this.aDeck.sort(new RankFirstComparator());
                     break;
                 case "Suit First":
-                    // TODO: Replace the following line of code.
                     this.aDeckTextArea.setText("This does not sort by suit first yet.");
                     break;
                 default:
