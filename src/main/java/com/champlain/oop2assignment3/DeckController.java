@@ -107,9 +107,6 @@ public class DeckController {
     }
 
 
-    private ScoringStrategy strategy;
-    private int score;
-    private CardCollection currentHand;
     /**
      * Handles the event when the score button is clicked.
      * Calculates the score based on the selected scoring strategy.
@@ -125,9 +122,11 @@ public class DeckController {
             switch (choice) {
                 case "Simple Count":
 
-                    strategy = new SimpleCountStrategy();
-                    score = strategy.calculateScore(currentHand);
-                    this.aScoreLabel.setText("Simple count...");
+                    SimpleCountStrategy strategy = new SimpleCountStrategy();
+                    int score = strategy.calculateScore(aHand);
+
+
+                    this.aScoreLabel.setText("Simple count " + score);
                     break;
                 case "Number Of Aces":
                     // TODO: Replace the following line of code.
