@@ -73,6 +73,14 @@ public class Deck extends CardCollection implements CardSource {
         return this.aCards.iterator();
     }
 
+    /**
+     * Sorts the cards in the deck using the specified comparator.
+     * 
+     * <p>This method allows for different sorting strategies to be applied to the deck
+     * by passing different comparators that define the desired ordering of cards.</p>
+     * 
+     * @param comparator the Comparator implementation that defines the sorting criteria
+     */
     public void sort(Comparator<Card> comparator) {
         Collections.sort(this.aCards, comparator);
     }
