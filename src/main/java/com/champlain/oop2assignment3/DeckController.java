@@ -116,10 +116,33 @@ public class DeckController {
     }
 
 
+
     /**
-     * Handles the event when the score button is clicked.
-     * Calculates the score based on the selected scoring strategy.
-     * Displays an error alert if no strategy is selected.
+     * Handles the event triggered when the "Score" button is clicked in the UI.
+     * <p>
+     * This method retrieves the currently selected scoring strategy from the
+     * {@code aScoreStrategyChoiceBox}. If no strategy has been selected, it displays
+     * an error alert prompting the user to make a choice. Otherwise, it applies
+     * the selected scoring strategy to the player's hand ({@code aHand}) and
+     * updates the score label ({@code aScoreLabel}) accordingly.
+     * </p>
+     *
+     * <p>
+     * Currently supported strategies include:
+     * <ul>
+     *   <li><b>Simple Count</b> — Uses {@link SimpleCountStrategy} to calculate a basic score.</li>
+     *   <li><b>Number Of Aces</b> — Placeholder for future implementation.</li>
+     * </ul>
+     * </p>
+     *
+     * <p>
+     * If an unexpected value is encountered in the choice box, a default error message
+     * is displayed in the score label.
+     * </p>
+     *
+     * @FXML
+     * This method is invoked automatically by the JavaFX framework when the "Score" button
+     * is pressed, as it is linked to the corresponding UI element via the {@code fx:id}.
      */
     @FXML
     protected void onScoreButtonClick() {
