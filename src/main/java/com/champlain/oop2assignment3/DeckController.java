@@ -154,15 +154,16 @@ public class DeckController {
             switch (choice) {
                 case "Simple Count":
 
-                    SimpleCountStrategy strategy = new SimpleCountStrategy();
-                    int score = strategy.calculateScore(aHand);
+                    SimpleCountStrategy aStrategy = new SimpleCountStrategy();
+                    int score = aStrategy.calculateScore(aHand);
 
 
                     this.aScoreLabel.setText("Simple count " + score);
                     break;
                 case "Number Of Aces":
-                    // TODO: Replace the following line of code.
-                    this.aScoreLabel.setText("Number of aces...");
+                    numberOfAces strategy = new numberOfAces();
+                    int score2 = strategy.calculateScore(aHand);
+                    this.aScoreLabel.setText("Number of aces " + score2);
                     break;
                 default:
                     this.aScoreLabel.setText("This should not happen! You messed up.");
