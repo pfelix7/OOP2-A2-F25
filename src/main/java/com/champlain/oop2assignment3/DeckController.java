@@ -58,11 +58,27 @@ public class DeckController {
     /**
      * Initializes the controller and sets up the UI components.
      * This method is called after the FXML file has been loaded.
+     * Tests the overridden equals method from Card class
      */
     public void initialize() {
         this.displayCardCollections();
         this.aSortStrategyChoiceBox.getItems().addAll("Rank First", "Suit First");
         this.aScoreStrategyChoiceBox.getItems().addAll("Simple Count", "Number Of Aces");
+
+        // Create two identical cards
+        Card card1 = new Card(Rank.ACE, Suit.SPADES);
+        Card card2 = new Card(Rank.ACE, Suit.SPADES);
+
+        // Create a different card
+        Card card3 = new Card(Rank.KING, Suit.HEARTS);
+
+        // Test equals
+        boolean areEqual1 = card1.equals(card2);  // true
+        boolean areEqual2 = card1.equals(card3);  // false
+
+        // Print or log the results
+        System.out.println("card1 equals card2: " + areEqual1);
+        System.out.println("card1 equals card3: " + areEqual2);
     }
 
     /**
