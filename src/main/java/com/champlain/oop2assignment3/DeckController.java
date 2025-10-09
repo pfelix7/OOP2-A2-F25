@@ -120,29 +120,29 @@ public class DeckController {
     /**
      * Handles the event triggered when the "Score" button is clicked in the UI.
      * <p>
-     * This method retrieves the currently selected scoring strategy from the
-     * {@code aScoreStrategyChoiceBox}. If no strategy has been selected, it displays
-     * an error alert prompting the user to make a choice. Otherwise, it applies
-     * the selected scoring strategy to the player's hand ({@code aHand}) and
-     * updates the score label ({@code aScoreLabel}) accordingly.
+     * This method checks which scoring strategy is currently selected in the
+     * {@code aScoreStrategyChoiceBox}. If no strategy is selected, it displays an
+     * error alert prompting the user to make a selection. Otherwise, it applies
+     * the corresponding scoring strategy to the player's hand ({@code aHand}) and
+     * updates the score label ({@code aScoreLabel}) to show the result.
      * </p>
      *
      * <p>
      * Currently supported strategies include:
      * <ul>
-     *   <li><b>Simple Count</b> — Uses {@link SimpleCountStrategy} to calculate a basic score.</li>
-     *   <li><b>Number Of Aces</b> — Placeholder for future implementation.</li>
+     *   <li><b>Simple Count</b> — Uses {@link SimpleCountStrategy} to count all cards in the hand.</li>
+     *   <li><b>Number Of Aces</b> — Uses {@link numberOfAces} to count only the aces in the hand.</li>
      * </ul>
      * </p>
      *
      * <p>
-     * If an unexpected value is encountered in the choice box, a default error message
-     * is displayed in the score label.
+     * If an unexpected or unsupported value is encountered in the choice box,
+     * a default message is displayed indicating that an error occurred.
      * </p>
      *
      * @FXML
-     * This method is invoked automatically by the JavaFX framework when the "Score" button
-     * is pressed, as it is linked to the corresponding UI element via the {@code fx:id}.
+     * This method is automatically called by the JavaFX framework when the user
+     * clicks the "Score" button, as defined by the {@code fx:id} link in the FXML file.
      */
     @FXML
     protected void onScoreButtonClick() {
